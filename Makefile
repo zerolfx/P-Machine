@@ -17,7 +17,7 @@ clean:
 	rm -f pmachine.tab.output
 	rm -f pmachine.tab.h
 
-instructions=instruction.o pop.o add.o and.o chk.o cup.o cupi.o dec.o div.o dpl.o ent.o equ.o fjp.o geq.o grt.o hlt.o inc.o ind.o ixa.o ixj.o lda.o ldc.o ldo.o leq.o les.o lod.o movd.o movs.o mst.o mstf.o mul.o neg.o neq.o new.o not.o or.o retf.o retp.o sep.o sli.o smp.o sro.o ssp.o sto.o str.o sub.o ujp.o in.o out.o ldd.o conv.o
+instructions=instruction.o pop.o mod.o add.o and.o chk.o cup.o cupi.o dec.o div.o dpl.o ent.o equ.o fjp.o geq.o grt.o hlt.o inc.o ind.o ixa.o ixj.o lda.o ldc.o ldo.o leq.o les.o lod.o movd.o movs.o mst.o mstf.o mul.o neg.o neq.o new.o not.o or.o retf.o retp.o sep.o sli.o smp.o sro.o ssp.o sto.o str.o sub.o ujp.o in.o out.o ldd.o conv.o
 stackelements=stackaddress.o stackelement.o stackinteger.o stackreal.o stackboolean.o stackcharacter.o
 exceptions=executionerror.o compiletimeerror.o
 
@@ -73,6 +73,9 @@ stackreal.o: stackreal.cpp stackreal.h stackelement.h
 
 pop.o: pop.cpp pop.h $(INCinstruction)
 	$(CXX) -c pop.cpp
+
+mod.o: mod.cpp mod.h $(INCinstruction)
+	$(CXX) -c mod.cpp
 
 add.o: add.cpp add.h $(INCinstruction)
 	$(CXX) -c add.cpp

@@ -7,6 +7,7 @@ using namespace std;
 #include "pmachine.h"
 
 #include "pop.h"
+#include "mod.h"
 #include "add.h"
 #include "sub.h"
 #include "mul.h"
@@ -79,6 +80,7 @@ void yyerror(string msg);
 }
 
 %token	pop_instr
+%token	mod_instr
 %token	add_instr
 %token	sub_instr
 %token	mul_instr
@@ -171,6 +173,12 @@ Instruction			: pop_instruction
 							cout << "pop_instruction completed" << endl;
 						#endif
 					}
+                | mod_instruction
+                                    {
+                                        #ifdef YACCOUTPUT
+                                            cout << "mod_instruction completed" << endl;
+                                        #endif
+                                    }
                 | add_instruction
                     {
                         #ifdef YACCOUTPUT
@@ -501,6 +509,11 @@ space 	: blank space
 pop_instruction		: pop_instr
                     {
                         Pmachine.addInstruction(new Pop());
+                    }
+                ;
+mod_instruction		: mod_instr
+                    {
+                        Pmachine.addInstruction(new Mod());
                     }
                 ;
 add_instruction			: add_instr space numeric

@@ -20,6 +20,7 @@ class StackInteger : public StackElement
 		void sub(StackElement *op);
 		void mul(StackElement *op);
 		void div(StackElement *op);
+		void mod(StackElement *op);
 		void neg();
 		
 		bool equ(const StackElement *kOp) const;

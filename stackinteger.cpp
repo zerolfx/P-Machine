@@ -68,6 +68,13 @@ void StackInteger::div(StackElement *op)
 }
 
 
+void StackInteger::mod(StackElement *op)
+{
+    StackInteger *op1 = dynamic_cast<StackInteger*>(op);
+    fInteger %= op1->fInteger;
+}
+
+
 /** 
 *	Switches the sign of the current StackInteger-value
 *	@return			none

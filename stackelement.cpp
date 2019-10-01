@@ -13,6 +13,11 @@ StackElement::StackElement() {}
 */
 StackElement::~StackElement() {}
 
+void StackElement::mod(StackElement *op)
+{
+    cerr << "add not available for class StackElement" << endl;
+}
+
 void StackElement::add(StackElement *op)
 {
 	cerr << "add not available for class StackElement" << endl;

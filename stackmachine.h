@@ -23,6 +23,7 @@ class StackMachine
 		friend class Instruction;
 
 		friend class Pop;
+		friend class Mod;
 
 		friend class Add; //p11		// tested
 		friend class Sub;			// tested

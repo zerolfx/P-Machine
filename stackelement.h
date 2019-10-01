@@ -29,6 +29,8 @@ class StackElement
 		/// virtual function: no specific implementation
 		virtual void div(StackElement *op);
 		/// virtual function: no specific implementation
+        virtual void mod(StackElement *op);
+        /// virtual function: no specific implementation
 		virtual void neg();
 
 		/// virtual function: no specific implementation

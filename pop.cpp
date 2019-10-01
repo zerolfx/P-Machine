@@ -15,10 +15,11 @@ void Pop::execute(StackMachine *stack)
     stack->fStore[stack->fSP] = 0;
     stack->fStore.pop_back();
     --stack->fSP;
+
+    stack->fTime.count("pop");
 }
 
 ostream& Pop::print(ostream &os) const
 {
-    os << "pop";
-    return os;
+    return os << "pop";
 }

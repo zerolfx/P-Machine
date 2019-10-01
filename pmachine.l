@@ -52,6 +52,13 @@ div		{
 			
 			return div_instr;
 		}
+mod		{
+			#ifdef LEXOUTPUT
+				cout << "mod found" << endl;
+			#endif
+
+			return mod_instr;
+		}
 neg		{
 			#ifdef LEXOUTPUT
 				cout << "neg found" << endl;
