@@ -21,6 +21,9 @@ class StackMachine
 {
 	public:
 		friend class Instruction;
+
+		friend class Pop;
+
 		friend class Add; //p11		// tested
 		friend class Sub;			// tested
 		friend class Mul;			// tested

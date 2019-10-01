@@ -17,6 +17,13 @@ extern int linecount;
 %}
 
 %%
+pop		{
+			#ifdef LEXOUTPUT
+				cout << "pop found" << endl;
+			#endif
+
+			return pop_instr;
+		}
 add		{
 			#ifdef LEXOUTPUT
 				cout << "add found" << endl;

@@ -6,6 +6,7 @@ using namespace std;
 #include "stackmachine.h"
 #include "pmachine.h"
 
+#include "pop.h"
 #include "add.h"
 #include "sub.h"
 #include "mul.h"
@@ -77,6 +78,7 @@ void yyerror(string msg);
 	enum Stacktypes {r, i, b, c, a} type;
 }
 
+%token	pop_instr
 %token	add_instr
 %token	sub_instr
 %token	mul_instr
@@ -163,12 +165,18 @@ InstructionSequence		: InstructionSequence Instruction EndlineRepeater
 				| Instruction EndlineRepeater
 				| EndlineRepeater
 				;
-Instruction			: add_instruction
+Instruction			: pop_instruction
 					{
 						#ifdef YACCOUTPUT
-							cout << "add_instruction completed" << endl;	
+							cout << "pop_instruction completed" << endl;
 						#endif
 					}
+                | add_instruction
+                    {
+                        #ifdef YACCOUTPUT
+                            cout << "add_instruction completed" << endl;
+                        #endif
+                    }
 				| sub_instruction
 					{
 						#ifdef YACCOUTPUT
@@ -490,6 +498,11 @@ arbitrary				: numeric
 space 	: blank space
 	| blank
 	;
+pop_instruction		: pop_instr
+                    {
+                        Pmachine.addInstruction(new Pop());
+                    }
+                ;
 add_instruction			: add_instr space numeric
 					{
 						switch($3)
