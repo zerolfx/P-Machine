@@ -222,6 +222,6 @@ main.o: main.cpp $(INCinstruction) pmachine.h
 	$(CXX) -c main.cpp
 
 pmachine: pmachine.yy.o pmachine.tab.o $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.tab.o pmachine.yy.c
-	$(CXX) -o Pmachine $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o -lfl
+	$(CXX) -o Pmachine $(instructions) $(stackelements) $(exceptions) labelcenter.o timecounter.o stackmachine.o main.o pmachine.yy.o pmachine.tab.o
 
 

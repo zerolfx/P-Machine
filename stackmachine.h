@@ -8,6 +8,7 @@
 #include <typeinfo>
 #include <strstream>
 using namespace std;
+class StackMachine;
 
 #include "instruction.h"
 #include "stackelement.h"

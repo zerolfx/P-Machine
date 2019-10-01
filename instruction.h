@@ -9,6 +9,7 @@
 #include <vector>
 #include <string>
 using namespace std;
+class Instruction;
 
 #include "stackmachine.h"
 #include "stackelement.h"
