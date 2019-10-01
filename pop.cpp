@@ -10,6 +10,10 @@ Pop::~Pop() {}
 
 void Pop::execute(StackMachine *stack)
 {
+    // SP := SP - 1
+    delete stack->fStore[stack->fSP];
+    stack->fStore[stack->fSP] = 0;
+    stack->fStore.pop_back();
     --stack->fSP;
 }
 
