@@ -91,6 +91,19 @@ void StackBoolean::ori(const StackElement *kOp)
 }
 
 
+/**
+*	Ors the current StackBoolean value with the parameter's value
+*	@return			none
+*	@param kOp		the StackBoolean to xor with
+*	@exception		none
+*/
+void StackBoolean::xori(const StackElement *kOp)
+{
+    const StackBoolean *op1 = dynamic_cast<const StackBoolean*>(kOp);
+    fBoolean = fBoolean ^ op1->fBoolean;
+}
+
+
 /** 
 *	Flips the boolean value (true --> false, false --> true)
 *	@return			none

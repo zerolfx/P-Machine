@@ -24,6 +24,20 @@ pop		{
 
 			return pop_instr;
 		}
+mod		{
+			#ifdef LEXOUTPUT
+				cout << "mod found" << endl;
+			#endif
+
+			return mod_instr;
+		}
+xor		{
+			#ifdef LEXOUTPUT
+				cout << "xor found" << endl;
+			#endif
+
+			return xor_instr;
+		}
 add		{
 			#ifdef LEXOUTPUT
 				cout << "add found" << endl;
@@ -51,13 +65,6 @@ div		{
 			#endif
 			
 			return div_instr;
-		}
-mod		{
-			#ifdef LEXOUTPUT
-				cout << "mod found" << endl;
-			#endif
-
-			return mod_instr;
 		}
 neg		{
 			#ifdef LEXOUTPUT

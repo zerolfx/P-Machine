@@ -8,6 +8,7 @@ using namespace std;
 
 #include "pop.h"
 #include "mod.h"
+#include "xor.h"
 #include "add.h"
 #include "sub.h"
 #include "mul.h"
@@ -81,6 +82,7 @@ void yyerror(string msg);
 
 %token	pop_instr
 %token	mod_instr
+%token	xor_instr
 %token	add_instr
 %token	sub_instr
 %token	mul_instr
@@ -177,6 +179,12 @@ Instruction			: pop_instruction
                                     {
                                         #ifdef YACCOUTPUT
                                             cout << "mod_instruction completed" << endl;
+                                        #endif
+                                    }
+                | xor_instruction
+                                    {
+                                        #ifdef YACCOUTPUT
+                                            cout << "xor_instruction completed" << endl;
                                         #endif
                                     }
                 | add_instruction
@@ -514,6 +522,11 @@ pop_instruction		: pop_instr
 mod_instruction		: mod_instr
                     {
                         Pmachine.addInstruction(new Mod());
+                    }
+                ;
+xor_instruction		: xor_instr
+                    {
+                        Pmachine.addInstruction(new Xor());
                     }
                 ;
 add_instruction			: add_instr space numeric

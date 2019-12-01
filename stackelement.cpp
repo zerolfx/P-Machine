@@ -48,6 +48,11 @@ void StackElement::ori(const StackElement *kOp)
 	cerr << "ori not available for class StackElement" << endl;
 }
 
+void StackElement::xori(const StackElement *kOp)
+{
+    cerr << "xori not available for class StackElement" << endl;
+}
+
 void StackElement::noti()
 {
 	cerr << "noti not available for class StackElement" << endl;

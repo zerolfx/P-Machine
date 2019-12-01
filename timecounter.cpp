@@ -10,8 +10,9 @@
 TimeCounter::TimeCounter() : fCounter(0)
 {
 	fWeights.insert(map<string, int>::value_type("pop", 1));
-	fWeights.insert(map<string, int>::value_type("add", 1));
-	fWeights.insert(map<string, int>::value_type("mod", 1));
+    fWeights.insert(map<string, int>::value_type("mod", 1));
+    fWeights.insert(map<string, int>::value_type("xor", 1));
+    fWeights.insert(map<string, int>::value_type("add", 1));
 	fWeights.insert(map<string, int>::value_type("and", 1));
 	fWeights.insert(map<string, int>::value_type("chk", 1));
 	fWeights.insert(map<string, int>::value_type("conv", 1));

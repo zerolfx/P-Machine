@@ -23,6 +23,7 @@ class StackBoolean : public StackElement
 		
 		void andi(const StackElement *kOp);
 		void ori(const StackElement *kOp);
+		void xori(const StackElement *kOp);
 		void noti();
 		
 		bool getBoolean() const;

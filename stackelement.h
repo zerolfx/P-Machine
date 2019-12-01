@@ -38,6 +38,8 @@ class StackElement
 		/// virtual function: no specific implementation
 		virtual void ori(const StackElement *kOp);
 		/// virtual function: no specific implementation
+        virtual void xori(const StackElement *kOp);
+        /// virtual function: no specific implementation
 		virtual void noti();
 		
 		/// virtual function: no specific implementation
